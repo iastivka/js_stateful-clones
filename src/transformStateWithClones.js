@@ -25,6 +25,8 @@ function transformStateWithClones(state, actions) {
           delete stateCopy[key];
         }
         break;
+      default:
+        throw new Error(`Unknown action type: ${action.type}`);
     }
     result.push({ ...stateCopy });
   }
